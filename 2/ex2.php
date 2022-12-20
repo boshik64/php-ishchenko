@@ -16,26 +16,18 @@ while (!$qty_task || $qty_task <= 0) {
 
 echo "На сегодня у вас запланировано $qty_task приоритетных задачи:\n";
 
-do {
-    for ($num_task = 1; $num_task <= $qty_task; $num_task++) {
-        $title_task = (string) readline("Какая задача стоит перед вами сегодня? ");
+// do {
+//     for ($num_task = 1; $num_task <= $qty_task; $num_task++) {
+//         $title_task = (string) readline("Какая задача стоит перед вами сегодня? ");
+//         $time_task = (int) readline("Сколько примерно времени эта задача займет? ");
 
-        while (!$time_task || $time_task <= 0) {
-            $time_task = (int) readline("Сколько примерно времени эта задача займет? ");
-            if (true) {
-                echo ("Неверно.Попробуй ещё раз.\n");
-            }
-        }
-        $result_task = $result_task . "-$title_task ($time_task.ч)\n";
-        $sum_time_task = $sum_time_task + $time_task;
+//         $result_task = $result_task . "-$title_task ($time_task.ч)\n";
+//         $sum_time_task = $sum_time_task + $time_task;
+//     }
+//     echo "
+// Сегодня у вас запланировано $qty_task приоритетных задачи:
 
-
-
-    }
-    echo "
-Сегодня у вас запланировано $qty_task приоритетных задачи:
-
-$result_task
-Примерное время выполнения плана = $sum_time_task.ч";
-    break;
-} while (true);
+// $result_task
+// Примерное время выполнения плана = $sum_time_task.ч";
+//     break;
+// } while (true);

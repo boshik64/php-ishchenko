@@ -19,3 +19,14 @@ while (true) {
         echo "Этого даже в вариантах нет. Попробуйте ещё раз.\n";
     }
 }
+
+
+// do {
+//     $answer = readline("В каком году произошло ?");
+// } while ($answer != 810 && $answer != 988 && $answer != 740);
+
+// if ($answer == 988) {
+//     echo ("ok");
+// } else {
+//     echo ("bad");
+// }
