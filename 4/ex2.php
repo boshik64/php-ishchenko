@@ -2,10 +2,11 @@
 
 function someFunc(array $numbers): array
 {
-    $result[] = "max: " . max($numbers);
-    $result[] = "min: " . min($numbers);
-    $result[] = "avg: " . array_sum($numbers) / count($numbers);
-    return $result;
+    return [
+        "max: " => max($numbers),
+        "min: " => min($numbers),
+        "avg: " => array_sum($numbers) / count($numbers)
+    ];
 }
 
-var_dump(someFunc([2, 4, 5, 1232, 5232, 2, 0]));
+var_dump(someFunc([2, 2, 4, 5, 2, 523, 4, 234, 23, 2]));

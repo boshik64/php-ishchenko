@@ -42,7 +42,7 @@ $box = [
 ];
 
 
-function find(string $item_name, $array)
+function find(string $item_name, array $array)
 {
 
 
@@ -51,9 +51,13 @@ function find(string $item_name, $array)
 
 
         if (is_array($array_item)) {
-            return true;
-        } elseif ($array_item == $item_name) {
-            return find($item_name, $array_item);
+            if (find($item_name, $array_item)) {
+                return true;
+            }
+        } else {
+            if ($item_name == $array_item) {
+                return true;
+            }
         }
     }
     return false;
@@ -62,6 +66,6 @@ function find(string $item_name, $array)
 
 
 
-var_dump(find('Ключ', $box));
+var_dump(find('Инструкция', $box));
 
-//Не понимаю почему дальше 0 массива не проверяет ... F
+ 
