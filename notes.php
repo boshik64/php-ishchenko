@@ -15,7 +15,6 @@
 // find(1, 1, 99);
 
 
-
 // $numbers = [4, 5, 1, 4, 7, 8, 15, 6, 71, 45, 2];
 
 
@@ -28,12 +27,9 @@
 // };
 
 
-
 // $result = array_map(fn($number) => $number % 2 == 0 ? "четное" : "нечетное", $numbers);
 
 // print_r($result);
-
-
 
 
 // function someFunc(array $numbers): array
@@ -98,7 +94,6 @@
 // ;
 
 
-
 // class Math
 // {
 //     const PI = 3.14;
@@ -110,7 +105,6 @@
 
 // Math::add();
 // echo Math::PI;
-
 
 
 // $todoList = [];
@@ -202,7 +196,6 @@
 // }
 
 
-
 // class Comment
 // {
 
@@ -245,9 +238,6 @@
 // }
 
 
-
-
-
 // $pasha = new User('Паша', 'Финогентов', 54);
 
 // $newTask = new Task('Сделать то-то', 5, $pasha);
@@ -256,10 +246,6 @@
 // $newTask->markAsDone() . PHP_EOL;
 // TaskService::addComment($pasha, $newTask, "лялляляля");
 // var_dump($newTask);
-
-
-
-
 
 
 // class Product
@@ -365,6 +351,35 @@
 // $newCart->addProducts([$keyBoard, $mouse, $devices]);
 // var_dump($newCart);
 
+
+function high($x)
+{
+    $result = [];
+    $math = [];
+    $words = explode(' ', $x);
+    foreach ($words as $word) {
+        $sum = 0;
+        $word = str_split($word, 1);
+        foreach ($word as $symbol) {
+            $sum += array_search($symbol, range('a', 'z')) + 1;
+        }
+        $math += [implode('', $word) => $sum];
+    }
+    /*asort($math);
+    $a = array_keys($math);*/
+    /*return end($a);*/
+    foreach ($math as $value) {
+        if ($value != max($math)) {
+            unset($math[array_search($value, $math)]);
+            $result = array_key_first($math);
+        }else{
+            $result = array_search($value, $math);
+        }
+    }
+    return $result;
+}
+
+print_r(high('aa b aaa c'));
 
 
 

@@ -1,10 +1,6 @@
 <?php
-$login = "admin";
-//setcookie('login',$login,time()+36000,'/');
-echo "<pre>";
-print_r($_COOKIE);
+include "auth.php";
 ?>
-
 
 <!doctype html>
 <html lang="en">
@@ -16,11 +12,7 @@ print_r($_COOKIE);
     <title>Document</title>
 </head>
 <body>
-
-<form method="post">
-    <input type="text" name="login">
-    <input type="submit">
-</form>
-
+<?php include "menu.php";?>
+<a href="shop.php">Покупки</a>
 </body>
 </html>
